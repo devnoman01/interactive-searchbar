@@ -1,0 +1,115 @@
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+/* font-family: 'Poppins', sans-serif; */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    margin: 0 auto;
+    font-family: 'Poppins', sans-serif;
+    color: #082032;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+header{
+    width: 100%;
+    background-color: #f3f3f3;
+    display: flex;
+    justify-content: center;
+}
+#header{
+    max-width: 1200px;
+    padding: 2rem 0.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+header h1{
+    font-size: 3rem;
+    font-weight: 500;
+}
+header h2{
+    font-size: 2rem;
+    font-weight: 300;
+}
+header p{
+    margin: 1rem 0;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 2px;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#search-section{
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+label{
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+input{
+    text-align: center;
+    width: 20rem;
+    height: 2rem;
+    
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+    border: none;
+    outline: none;
+    border-radius: 1rem;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    color: #082032;
+}
+
+#info-section{
+    margin: 2rem 0;
+}
+.person{
+    border: 1px solid lightgray;
+}
+.person-name{
+    font-size: 1rem;
+}
+.person-email{
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+.location-info{
+    color: gray;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer{
+    width: 100%;
+    margin: 0 auto;
+    background-color: #f3f3f3;
+    padding: 2rem 0;
+}
+footer .container{
+    display: flex;
+    justify-content: center;
+}
+.footer-text{
+    font-weight: 400;
+}
+
+.hide-person{
+    display: none;
+}
+.show-person{
+    display: block;
+}
