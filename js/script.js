@@ -1,25 +1,10 @@
 let resultName = "";
 let resultEmail = "";
 
-const personInfo = [
-    {name: "Abdul Hadi", email: "183003022e@eastdelta.edu.bd"},
-    {name: "Abdullah Al Noman", email: "183002922e@eastdelta.edu.bd"},
-    {name: "Abdullah Imran Hriday", email: "183001622e@eastdelta.edu.bd"},
-    {name: "Abu Hanif", email: "183002422e@eastdelta.edu.bd"},
-    {name: "Anjan Chakraborty", email: "183002622e@eastdelta.edu.bd"},
-    {name: "Arafat Hossain", email: "183001722e@eastdelta.edu.bd"},
-    {name: "Ariful Islam", email: "183000222e@eastdelta.edu.bd"},
-    {name: "Asif Iqbal Palash", email: "183000822e@eastdelta.edu.bd"},
-    {name: "Faruq Hasan", email: "183002022e@eastdelta.edu.bd"},
-    {name: "Farzana Smrity", email: "183002122e@eastdelta.edu.bd"},
-    {name: "Kashpiya Amina", email: "183000422e@eastdelta.edu.bd"},
-    {name: "Monsurul Alam", email: "183002522e@eastdelta.edu.bd"},
-    {name: "Najnin Sultana", email: "183000522e@eastdelta.edu.bd"},
-    {name: "Nurun Nabi", email: "183002722e@eastdelta.edu.bd"},
-    {name: "Shagatam Mutsuddy", email: "183001422e@eastdelta.edu.bd"},
-    {name: "Shahariar Shaown", email: "183002322e@eastdelta.edu.bd"},
-    {name: "Zainal Abedin", email: "183000322e@eastdelta.edu.bd"},
-];
+const allNames = ["Abdul Hadi", "Abdullah Al Noman", "Abdullah Imran Hriday", "Abu Hanif", "Anjan Chakraborty", "Arafat Hossain", "Ariful Islam", "Asif Iqbal Palash", "Faruq Hasan", "Farzana Smrity", "Kashpiya Amina", "Monsurul Alam", "Najnin Sultana", "Nurun Nabi", "Sakhawat Hossain", "Shagatam Mutsuddy", "Shahariar Shaown", "Zainal Abedin"];
+
+const allEmails = ["183003022e@eastdelta.edu.bd", "183002922e@eastdelta.edu.bd", "183001622e@eastdelta.edu.bd", "183002422e@eastdelta.edu.bd", "183002622e@eastdelta.edu.bd", "183001722e@eastdelta.edu.bd", "183000222e@eastdelta.edu.bd", "183000822e@eastdelta.edu.bd", "183002022e@eastdelta.edu.bd", "183002122e@eastdelta.edu.bd", "183000422e@eastdelta.edu.bd", "183002522e@eastdelta.edu.bd", "183000522e@eastdelta.edu.bd", "183000622e@eastdelta.edu.bd", "183002722e@eastdelta.edu.bd", "183001422e@eastdelta.edu.bd", "183002322e@eastdelta.edu.bd", "183000322e@eastdelta.edu.bd"];
+
 
 const personContainer = document.getElementById("person-container");
 
@@ -48,9 +33,9 @@ function loadNoUser() {
 }
 
 function loadAllUser() {
-    for(var person of personInfo ){
-        userName = person.name;
-        userEmail = person.email
+    for(let i=0; i<allNames.length; i++ ){
+        let userName = allNames[i];
+        let userEmail = allEmails[i];
         loadUser(userName, userEmail);
     }
 }
@@ -58,17 +43,19 @@ function loadAllUser() {
 
 function searchPerson() {
     
-    var searchValue = document.getElementById("searchText").value;
+    let searchFieldValue = document.getElementById("searchText").value;
+    let searchValue = searchFieldValue.toLowerCase();
     if(searchValue == ""){
+        loadNoUser();
         loadAllUser();
     }
     else{
-        loadNoUser()
-        for(let i=0; i<personInfo.length; i++){
+        loadNoUser();
+        for(let i=0; i<allNames.length; i++){
 
-            if(personInfo[i].name.includes(searchValue) || personInfo[i].email.includes(searchValue)){
-                resultName = personInfo[i].name;
-                resultEmail = personInfo[i].email;
+            if(allNames[i].toLowerCase().includes(searchValue) || allEmails[i].toLowerCase().includes(searchValue)){
+                resultName = allNames[i];
+                resultEmail = allEmails[i];
                 loadUser(resultName, resultEmail);
             }
         }
